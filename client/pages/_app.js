@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import "../public/css/index.css";
+import { Grid } from "@mui/material";
 
+// Root component
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+      <Grid>
+        <Component {...pageProps} />
+      </Grid>
+  );
 }
 
-export default MyApp
+export default MyApp;

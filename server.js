@@ -1,33 +1,36 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
+// const cookieParser = require("cookie-parser");
+// const session = require("express-session");
 const path = require("path");
 const app = express();
-const router = require("./routes");
+const contactRouter = require("./routes/contact");
 
 //allows for different domains to communicate
 app.use(
   cors({
-    origin: [process.env.ORIGIN, process.env.NEXT_PUBLIC_ART_STORE_API],
+    origin: [
+      process.env.ORIGIN,
+      process.env.NEXT_PUBLIC_RESTAURANT_SCRATCH_API,
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
 
-// Create a cookie parser
-app.use(cookieParser());
+// // Create a cookie parser
+// app.use(cookieParser());
 
-// Create cookie session
-app.use(
-  session({
-    key: "user",
-    secret: [process.env.COOKIE_KEY],
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+// // Create cookie session
+// app.use(
+//   session({
+//     key: "user",
+//     secret: [process.env.COOKIE_KEY],
+//     resave: false,
+//     saveUninitialized: false,
+//   })
+// );
 
 // ?
 app.use(express.urlencoded({ extended: true }));
@@ -39,7 +42,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 //routes
-app.use(router);
+app.use(contactRouter);
 
 //Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
@@ -53,6 +56,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Server setup
-app.listen(process.env.PORT, function () {
-  console.log("Server Running on port: " + process.env.PORT);
+app.listen(process.env.PORT, () => {
+  console.log(`Server Running on port: ${process.env.PORT}`);
 });

@@ -24,3 +24,11 @@ a {
     background: black;
   }
 }
+
+.restaurant-logo{
+  width: 100%;
+}
+
+.created-font{
+  font-size: 10px;
+}

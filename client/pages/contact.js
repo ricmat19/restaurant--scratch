@@ -3,15 +3,15 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { Grid } from "@mui/material";
 
-//Home functional component
-const Home = () => {
-  // Home component
+//Contact functional component
+const Contact = () => {
+  //Contact component
   return (
     <Grid>
       {/* Main navigation component */}
       <Header />
-      {/* Home content */}
-      <Grid></Grid>
+      {/* Contact content */}
+      <Grid>Hello</Grid>
       {/* Footer component */}
       <Footer />
     </Grid>
@@ -20,7 +20,7 @@ const Home = () => {
 
 // export async function getStaticProps() {
 
-//   //Provide the cart quantity as a prop to the home component
+//   //Provide the cart quantity as a prop to the contact component
 //   return {
 //     // props: {
 
@@ -29,4 +29,4 @@ const Home = () => {
 //   };
 // }
 
-export default Home;
+export default Contact;
