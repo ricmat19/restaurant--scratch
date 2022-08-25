@@ -8,17 +8,17 @@ const Header = () => {
   const router = useRouter();
 
   //Get cart content on render
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        console.log("test");
-      } catch (err) {
-        console.log(err);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       console.log("test");
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <header>
@@ -27,29 +27,31 @@ const Header = () => {
           sx={{
             display: "grid",
             gridTemplateColumns: "auto 1fr",
+            gap: "300px",
+            backgroundColor: "black",
+            color: "white",
+            padding: "10px 0"
           }}
         >
-          <Grid>
-            <Grid
-              onClick={() => router.push("/")}
-              sx={{
-                textAlign: "center",
-                alignSelf: "center",
-                cursor: "pointer",
-              }}
-            >
-              <Grid className="nav-link">
-                <Grid sx={{ width: "200px" }}>
-                  <img
-                    className="restaurant-logo"
-                    src="/images/restaurant-logo.jpg"
-                    alt="logo"
-                  />
-
+          <Grid
+            onClick={() => router.push("/")}
+            sx={{
+              textAlign: "center",
+              alignSelf: "center",
+              cursor: "pointer",
+            }}
+          >
+            <Grid className="nav-link">
+              <Grid sx={{ width: "200px" }}>
+                <img
+                  className="restaurant-logo"
+                  src="/images/cool-cat-cafe.png"
+                  alt="logo"
+                />
+                {/*
                   <a className="created-font" href="https://www.freepik.com/vectors/knife">
                     Knife vector created by macrovector - www.freepik.com
-                  </a>
-                </Grid>
+                  </a> */}
               </Grid>
             </Grid>
           </Grid>
@@ -104,7 +106,7 @@ const Header = () => {
               }}
             >
               <Grid className="nav-link">
-                <h1>privateEvents</h1>
+                <h1>private events</h1>
               </Grid>
             </Grid>
             <Grid
