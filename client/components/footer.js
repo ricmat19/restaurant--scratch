@@ -27,7 +27,7 @@ const Footer = () => {
           <p>Brickell</p>
           <p>South Beach</p>
         </Grid>
-        <Grid className="align-center footer-pad">
+        <Grid className="align-center footer-follow">
           <h1>Follow Us:</h1>
           {/* Link to instagram */}
           <Grid
@@ -71,7 +71,7 @@ const Footer = () => {
             </a>
           </Grid>
         </Grid>
-        <Grid>
+        <Grid className="footer-contact">
           <h1>Contact Us</h1>
           <p>(305) 111-1121</p>
           <p>restaurant@eat.com</p>

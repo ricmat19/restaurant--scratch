@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import { Grid } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeftLong, faRightLong } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 
 //Home functional component
 const Home = () => {
@@ -12,6 +13,8 @@ const Home = () => {
   const [carouselImage, setCarouselImage] = useState("burger2.jpg");
   const [carouselImageTitle, setCarouselImageTitle] = useState("");
   const [carouselImageDescription, setCarouselImageDescription] = useState("");
+
+  const router = useRouter();
 
   let carousel = [
     "burger2.jpg",
@@ -107,7 +110,7 @@ const Home = () => {
             </ul>
           </Grid>
           <Grid
-            className="carousel-image-info"
+            className="carousel-image-overlay"
             sx={{
               position: "absolute",
               top: "0",
@@ -116,9 +119,21 @@ const Home = () => {
               height: "100%",
             }}
           >
-            <h1>{carouselImageTitle}Test Title</h1>
-            <p>{carouselImageDescription} Test Description</p>
-            <button>Locations</button>
+            <p className="carousel-title">
+              {carouselImageTitle} Delicious Food
+            </p>
+            <p className="carousel-description">
+              {carouselImageDescription} Lorem ipsum dolor sit amet consectetur
+              adipisicing elit.
+            </p>
+            <Grid sx={{ display: "grid", justifyContent: "center" }}>
+              <button
+                className="carousel-locations-button"
+                onClick={() => router.push("/hours-locations")}
+              >
+                Locations
+              </button>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
