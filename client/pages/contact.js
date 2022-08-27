@@ -1,10 +1,34 @@
-// import IndexAPI from "../api/indexAPI";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { Grid } from "@mui/material";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 //Contact functional component
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAIL_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   //Contact component
   return (
     <Grid>
@@ -33,7 +57,7 @@ const Contact = () => {
         >
           <p className="page-image-title">Contact</p>
         </Grid>
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
           <Grid
             sx={{
               position: "relative",
@@ -58,7 +82,13 @@ const Contact = () => {
                   padding: "20px 0",
                 }}
               >
-                <input type="text" className="form-field" placeholder="name" />
+                <input
+                  type="text"
+                  className="form-field"
+                  placeholder="name"
+                  name="name"
+                  required
+                />
               </Grid>
               <Grid
                 sx={{
@@ -70,6 +100,8 @@ const Contact = () => {
                   type="email"
                   className="form-field"
                   placeholder="email"
+                  name="email"
+                  required
                 />
               </Grid>
               <Grid
@@ -82,6 +114,8 @@ const Contact = () => {
                   type="tel"
                   className="form-field"
                   placeholder="phone #"
+                  name="phone"
+                  required
                 />
               </Grid>
               <Grid
@@ -94,6 +128,8 @@ const Contact = () => {
                   className="form-textarea"
                   rows="10"
                   placeholder="message"
+                  name="message"
+                  required
                 ></textarea>
               </Grid>
               <Grid
@@ -101,9 +137,7 @@ const Contact = () => {
                   textAlign: "center",
                 }}
               >
-                <button className="page-button" type="submit">
-                  Submit
-                </button>
+                <input className="page-button" type="submit" value="Send" />
               </Grid>
             </Grid>
           </Grid>
@@ -114,16 +148,5 @@ const Contact = () => {
     </Grid>
   );
 };
-
-// export async function getStaticProps() {
-
-//   //Provide the cart quantity as a prop to the contact component
-//   return {
-//     // props: {
-
-//     // },
-//     revalidate: 1,
-//   };
-// }
 
 export default Contact;

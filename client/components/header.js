@@ -1,39 +1,40 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { Grid } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 //Main navigation functional component
 const Header = () => {
   //Next router function
   const router = useRouter();
 
-  //Get cart content on render
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       console.log("test");
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
   return (
-    <header>
-      <nav>
-        <Grid
-          sx={{
-            display: "grid",
-            gridTemplateColumns: "auto 1fr",
-            gap: "300px",
-            backgroundColor: "black",
-            color: "white",
-            padding: "10px 0",
-            borderBottom: "white solid 2px"
-          }}
-        >
+    <header className="navbar-div">
+      <div className="nav-row">
+        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
+        <label htmlFor="nav-toggle" className="nav-toggle-label">
+          <a className="menu-toggle">
+            <nav>
+              <Grid
+                onClick={() => router.push("/")}
+                sx={{
+                  textAlign: "center",
+                  alignSelf: "center",
+                  cursor: "pointer",
+                }}
+              >
+                <Grid sx={{ width: "200px" }}>
+                  <img
+                    className="menu-burger-logo restaurant-logo"
+                    src="/images/cool-cat-cafe.png"
+                    alt="logo"
+                  />
+                </Grid>
+              </Grid>
+              <MenuIcon className="menu-icon" />
+            </nav>
+          </a>
+        </label>
+        <nav className="navbar">
           <Grid
             onClick={() => router.push("/")}
             sx={{
@@ -45,19 +46,14 @@ const Header = () => {
             <Grid className="nav-link">
               <Grid sx={{ width: "200px" }}>
                 <img
-                  className="restaurant-logo"
+                  className="main-logo restaurant-logo"
                   src="/images/cool-cat-cafe.png"
                   alt="logo"
                 />
               </Grid>
             </Grid>
           </Grid>
-          <Grid
-            sx={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr",
-            }}
-          >
+          <Grid className="navbar-links">
             <Grid
               onClick={() => router.push("/menu")}
               sx={{
@@ -65,6 +61,7 @@ const Header = () => {
                 alignSelf: "center",
                 cursor: "pointer",
               }}
+              className="nav-link-container"
             >
               <Grid className="nav-link">
                 <h1>menu</h1>
@@ -77,6 +74,7 @@ const Header = () => {
                 alignSelf: "center",
                 cursor: "pointer",
               }}
+              className="nav-link-container"
             >
               <Grid className="nav-link">
                 <h1>hours/locations</h1>
@@ -89,21 +87,10 @@ const Header = () => {
                 alignSelf: "center",
                 cursor: "pointer",
               }}
+              className="nav-link-container"
             >
               <Grid className="nav-link">
                 <h1>about</h1>
-              </Grid>
-            </Grid>
-            <Grid
-              onClick={() => router.push("/privateEvents")}
-              sx={{
-                textAlign: "center",
-                alignSelf: "center",
-                cursor: "pointer",
-              }}
-            >
-              <Grid className="nav-link">
-                <h1>private events</h1>
               </Grid>
             </Grid>
             <Grid
@@ -113,6 +100,7 @@ const Header = () => {
                 alignSelf: "center",
                 cursor: "pointer",
               }}
+              className="nav-link-container"
             >
               <Grid className="nav-link">
                 <h1>reservations</h1>
@@ -125,14 +113,15 @@ const Header = () => {
                 alignSelf: "center",
                 cursor: "pointer",
               }}
+              className="nav-link-container"
             >
               <Grid className="nav-link">
                 <h1>contact</h1>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </nav>
+        </nav>
+      </div>
     </header>
   );
 };

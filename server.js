@@ -5,7 +5,28 @@ const cors = require("cors");
 // const session = require("express-session");
 const path = require("path");
 const app = express();
-const contactRouter = require("./routes/contact");
+const reservationsRouter = require("./routes/reservations");
+
+// ?
+app.use(express.urlencoded({ extended: true }));
+
+//Middleware: Puts the json data in a pages body in a req object, parses the data
+app.use(express.json());
+
+//Serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  require("dotenv").config();
+
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+} else {
+  require("dotenv").config({
+    path: path.resolve(__dirname, "./.env"),
+  });
+}
 
 //allows for different domains to communicate
 app.use(
@@ -32,32 +53,11 @@ app.use(
 //   })
 // );
 
-// ?
-app.use(express.urlencoded({ extended: true }));
-
-//Middleware: Puts the json data in a pages body in a req object, parses the data
-app.use(express.json());
-
 //Middleware: Logging
 app.use(morgan("dev"));
 
 //routes
-app.use(contactRouter);
-
-//Serve static assets if in production
-if (process.env.NODE_ENV === "production") {
-  require("dotenv").config();
-
-  app.use(express.static("client/build"));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-} else {
-  require("dotenv").config({
-    path: path.resolve(__dirname, "./.env"),
-  });
-}
+app.use(reservationsRouter);
 
 // Server setup
 app.listen(process.env.PORT, () => {
