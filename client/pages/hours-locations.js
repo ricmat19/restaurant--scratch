@@ -29,13 +29,20 @@ const HoursLocations = () => {
         >
           <p className="page-image-title">Hours & Locations</p>
         </Grid>
-        <Grid sx={{ position: "relative" }}>
+        <Grid
+          sx={{
+            position: "relative",
+            zIndex: "3",
+            backgroundColor: "rgb(26, 26, 26)",
+            color: "white",
+            fontSize: "16px",
+          }}
+        >
           <Grid
             sx={{
               margin: "0 40px",
               display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr",
-              color: "white",
+              gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
             }}
           >
             <Grid
@@ -55,7 +62,7 @@ const HoursLocations = () => {
                   />
                 </Grid>
                 <Grid
-                  sx={{ position: "absolute" }}
+                  sx={{ position: "absolute", top: 0, left: 0 }}
                   className="location-image-overlay"
                 >
                   <p className="location-image-title">Kendall</p>
@@ -103,15 +110,15 @@ const HoursLocations = () => {
                 <Grid>
                   <img
                     className="location-image"
-                    src="images/location-0.jpg"
-                    alt="Kendall location"
+                    src="images/location-2.jpg"
+                    alt="Brickell location"
                   />
                 </Grid>
                 <Grid
-                  sx={{ position: "absolute" }}
+                  sx={{ position: "absolute", top: 0, left: 0 }}
                   className="location-image-overlay"
                 >
-                  <p className="location-image-title">Kendall</p>
+                  <p className="location-image-title">Brickell</p>
                 </Grid>
               </Grid>
               <Grid sx={{ display: "grid", gap: "20px" }}>
@@ -156,15 +163,15 @@ const HoursLocations = () => {
                 <Grid>
                   <img
                     className="location-image"
-                    src="images/location-0.jpg"
-                    alt="Kendall location"
+                    src="images/location-1.jpg"
+                    alt="South Beach location"
                   />
                 </Grid>
                 <Grid
-                  sx={{ position: "absolute" }}
+                  sx={{ position: "absolute", top: 0, left: 0 }}
                   className="location-image-overlay"
                 >
-                  <p className="location-image-title">Kendall</p>
+                  <p className="location-image-title">South Beach</p>
                 </Grid>
               </Grid>
               <Grid sx={{ display: "grid", gap: "20px" }}>

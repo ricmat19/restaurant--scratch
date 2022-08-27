@@ -128,7 +128,7 @@ const Home = () => {
             </p>
             <Grid sx={{ display: "grid", justifyContent: "center" }}>
               <button
-                className="carousel-locations-button"
+                className="page-button"
                 onClick={() => router.push("/hours-locations")}
               >
                 Locations

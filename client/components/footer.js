@@ -19,6 +19,7 @@ const Footer = () => {
           backgroundColor: "black",
           color: "white",
           padding: "10px 20px",
+          borderTop: "white solid 2px",
         }}
       >
         <Grid>

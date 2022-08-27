@@ -30,7 +30,8 @@ const Header = () => {
             gap: "300px",
             backgroundColor: "black",
             color: "white",
-            padding: "10px 0"
+            padding: "10px 0",
+            borderBottom: "white solid 2px"
           }}
         >
           <Grid
@@ -48,10 +49,6 @@ const Header = () => {
                   src="/images/cool-cat-cafe.png"
                   alt="logo"
                 />
-                {/*
-                  <a className="created-font" href="https://www.freepik.com/vectors/knife">
-                    Knife vector created by macrovector - www.freepik.com
-                  </a> */}
               </Grid>
             </Grid>
           </Grid>
