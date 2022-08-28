@@ -54,7 +54,7 @@ const HoursLocations = () => {
               }}
             >
               <Grid sx={{ position: "relative" }}>
-                <Grid>
+                <Grid sx={{ display: "grid", justifyContent: "center" }}>
                   <img
                     className="location-image"
                     src="images/location-0.jpg"
@@ -107,7 +107,7 @@ const HoursLocations = () => {
               }}
             >
               <Grid sx={{ position: "relative" }}>
-                <Grid>
+                <Grid sx={{ display: "grid", justifyContent: "center" }}>
                   <img
                     className="location-image"
                     src="images/location-2.jpg"
@@ -160,7 +160,7 @@ const HoursLocations = () => {
               }}
             >
               <Grid sx={{ position: "relative" }}>
-                <Grid>
+                <Grid sx={{ display: "grid", justifyContent: "center" }}>
                   <img
                     className="location-image"
                     src="images/location-1.jpg"

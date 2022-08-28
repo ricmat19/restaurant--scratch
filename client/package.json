@@ -24,6 +24,7 @@
     "@mui/material": "^5.10.2",
     "@mui/system": "^5.10.2",
     "@mui/x-date-pickers": "^5.0.0-beta.7",
+    "aos": "^3.0.0-beta.6",
     "dayjs": "^1.11.5",
     "next": "12.2.5",
     "react": "18.2.0",

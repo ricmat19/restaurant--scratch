@@ -20,9 +20,7 @@ const Footer = () => {
       <Grid className="align-center social-container">
         <h1>Follow Us:</h1>
         {/* Link to instagram */}
-        <Grid
-          className="social-icon-container"
-        >
+        <Grid className="social-icon-container">
           <a
             href="https://www.instagram.com/arthouse_19/"
             target="_blank"
@@ -46,7 +44,7 @@ const Footer = () => {
           </a>
           {/* Link to youtube */}
           <a
-            href="https://www.youtube.com/channel/UCaem2HqM0PPak4fvf-uxlnQ"
+            href="https://www.yelp.com/biz/the-habit-burger-grill-miami"
             target="_blank"
             rel="noreferrer"
           >

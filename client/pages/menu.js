@@ -8,7 +8,7 @@ import Dinner from "../components/menus/dinner";
 import KidsMenu from "../components/menus/kidsMenu";
 import Dessert from "../components/menus/dessert";
 import { Grid } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 //Menu functional component
 const Menu = () => {

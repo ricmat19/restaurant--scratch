@@ -84,7 +84,7 @@ header {
 }
 
 .nav-link:hover {
-  color: rgb(181, 0, 0);
+  color: rgb(255, 65, 65);
 }
 
 @media (max-width: 1130px) {
@@ -116,6 +116,8 @@ header {
     background-color: black;
     color: white;
     padding: 10px 0;
+    position: absolute;
+    width: 100%;
   }
 
   .main-logo,
@@ -167,6 +169,18 @@ footer {
 
 .contact-container {
   text-align: right;
+}
+
+.menu-section {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+@media (max-width: 750px) {
+  .menu-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  }
 }
 
 @media (max-width: 995px) {
@@ -303,15 +317,15 @@ ul {
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.3);
   padding-bottom: 110px;
+  text-align: center;
 }
 
 .location-image-overlay {
   z-index: 5;
-  color: white;
   display: grid;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 99%;
   justify-content: center;
   align-content: center;
 }
@@ -323,15 +337,14 @@ ul {
 }
 
 .page-image-title {
-  font-size: 100px;
+  font-size: 10vw;
   font-weight: 400;
-  /* color: rgb(181, 0, 0); */
   color: black;
 }
 
 .location-image-title {
   font-size: 30px;
-  color: rgb(181, 0, 0);
+  color: rgb(255, 65, 65);
 }
 
 .carousel-description {
@@ -341,17 +354,17 @@ ul {
 }
 
 .page-button {
-  background-color: rgb(181, 0, 0);
+  background-color: rgb(255, 65, 65);
   color: black;
-  border-style: none;
-  font-size: 25px;
+  border: solid black 3px;
+  font-size: 100%;
   padding: 5px 10px;
   cursor: pointer;
 }
 
 .page-button:hover {
   background-color: black;
-  color: rgb(181, 0, 0);
+  color: rgb(255, 65, 65);
 }
 
 .page-image-div {
@@ -404,4 +417,8 @@ ul {
   height: 400px;
   object-fit: scale-down;
   padding: 0 20px;
+}
+
+.reservation-container {
+  background-color: rgb(231, 231, 231);
 }

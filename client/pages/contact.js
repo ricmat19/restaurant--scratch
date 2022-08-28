@@ -69,77 +69,79 @@ const Contact = () => {
               justifyContent: "center",
             }}
           >
-            <Grid
-              sx={{
-                border: "white solid 2px",
-                padding: "40px",
-                backgroundColor: "black",
-              }}
-            >
+            <div data-aos="fade-down">
               <Grid
                 sx={{
-                  display: "grid",
-                  padding: "20px 0",
+                  border: "white solid 2px",
+                  padding: "40px",
+                  backgroundColor: "black",
                 }}
               >
-                <input
-                  type="text"
-                  className="form-field"
-                  placeholder="name"
-                  name="name"
-                  required
-                />
+                <Grid
+                  sx={{
+                    display: "grid",
+                    padding: "20px 0",
+                  }}
+                >
+                  <input
+                    type="text"
+                    className="form-field"
+                    placeholder="name"
+                    name="name"
+                    required
+                  />
+                </Grid>
+                <Grid
+                  sx={{
+                    display: "grid",
+                    padding: "20px 0",
+                  }}
+                >
+                  <input
+                    type="email"
+                    className="form-field"
+                    placeholder="email"
+                    name="email"
+                    required
+                  />
+                </Grid>
+                <Grid
+                  sx={{
+                    display: "grid",
+                    padding: "20px 0",
+                  }}
+                >
+                  <input
+                    type="tel"
+                    className="form-field"
+                    placeholder="phone #"
+                    name="phone"
+                    required
+                  />
+                </Grid>
+                <Grid
+                  sx={{
+                    display: "grid",
+                    padding: "20px 0",
+                  }}
+                >
+                  <textarea
+                    className="form-textarea"
+                    rows="10"
+                    placeholder="message"
+                    name="message"
+                    required
+                  ></textarea>
+                </Grid>
+                <Grid
+                  sx={{
+                    textAlign: "center",
+                  }}
+                >
+                  <input className="page-button" type="submit" value="Send" />
+                </Grid>
               </Grid>
-              <Grid
-                sx={{
-                  display: "grid",
-                  padding: "20px 0",
-                }}
-              >
-                <input
-                  type="email"
-                  className="form-field"
-                  placeholder="email"
-                  name="email"
-                  required
-                />
-              </Grid>
-              <Grid
-                sx={{
-                  display: "grid",
-                  padding: "20px 0",
-                }}
-              >
-                <input
-                  type="tel"
-                  className="form-field"
-                  placeholder="phone #"
-                  name="phone"
-                  required
-                />
-              </Grid>
-              <Grid
-                sx={{
-                  display: "grid",
-                  padding: "20px 0",
-                }}
-              >
-                <textarea
-                  className="form-textarea"
-                  rows="10"
-                  placeholder="message"
-                  name="message"
-                  required
-                ></textarea>
-              </Grid>
-              <Grid
-                sx={{
-                  textAlign: "center",
-                }}
-              >
-                <input className="page-button" type="submit" value="Send" />
-              </Grid>
-            </Grid>
+            </div>
           </Grid>
         </form>
       </Grid>
